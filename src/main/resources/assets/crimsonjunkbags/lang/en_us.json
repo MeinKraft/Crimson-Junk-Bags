@@ -1,0 +1,25 @@
+{
+  "tip.crimsonjunkbags.hold_shift": "\u00A77Hold\u00A7e Shift\u00A77 for more information!",
+
+  "item.crimsonjunkbags.food_bag": "Food Bag",
+  "item.crimsonjunkbags.food_bag_super": "Super Foods Bag",
+  "item.crimsonjunkbags.junk_bag_common": "Common Junk Bag",
+  "item.crimsonjunkbags.junk_bag_uncommon": "Un-Common Junk Bag",
+  "item.crimsonjunkbags.junk_bag_rare": "Rare Junk Bag",
+  "item.crimsonjunkbags.junk_bag_epic": "Epic Junk Bag",
+  "item.crimsonjunkbags.junk_bag_legendary": "Legendary Junk Bag",
+  "item.crimsonjunkbags.junk_bag_stomp": "Stomp_The_Bean Junk Bag",
+  
+  "tip.crimsonjunkbags.food_bag": "Common all-round goodness",
+  "tip.crimsonjunkbags.food_bag_super": "Foods that restore more than 10 Hearts !",
+
+  "tip.crimsonjunkbags.no_loot": "(empty)",
+  "tip.crimsonjunkbags.junk_bag_common.item": "What treasures await? Probably rubbish",
+  "tip.crimsonjunkbags.junk_bag_uncommon.item": "What treasures await? Probably not-so rubbish",
+  "tip.crimsonjunkbags.junk_bag_rare.item": "What treasures await? Probably rare rubbish",
+  "tip.crimsonjunkbags.junk_bag_epic.item": "What treasures await? Probably not so-rare rubbish",
+  "tip.crimsonjunkbags.junk_bag_legendary.item": "What treasures await? Probably involves legs and ends ary",
+  "tip.crimsonjunkbags.junk_bag_stomp.item": "Surprised? You might be!",
+
+  "death.attack.boom": "Exploding Junk Bags - Yep, Its a thing !"
+}
