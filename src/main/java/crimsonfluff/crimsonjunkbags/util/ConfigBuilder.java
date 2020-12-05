@@ -19,13 +19,15 @@ public class ConfigBuilder {
 
         Loot_Playsound = builder
             .comment("Play a sound when opened ?")
-            .define("LootBag_Playsound", true);
+            .define("JunkBag_Playsound", true);
+
+        builder.pop();
 
 
-        builder.push("Food Loot");
+        builder.push("Food Junk");
         Food_Auto = builder
             .comment("Auto Generate List ?")
-            .comment("If true food items are sorted into Food_Bag and Food_Bag_Super loot bags")
+            .comment("If true food items are sorted into Food_Bag and Food_Bag_Super Junk Bags")
             .define("Food_Auto", true);
 
         Food_Hunger = builder
@@ -35,7 +37,6 @@ public class ConfigBuilder {
         Food_Saturation = builder
             .comment("Saturation level to be considered a Super Food. Default 10")
             .defineInRange("Food_Saturation", 10,10,20);
-
 
         builder.pop();
 

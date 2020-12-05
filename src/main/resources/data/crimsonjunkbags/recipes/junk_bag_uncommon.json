@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "##",
+        "##"
+    ],
+    "key": {
+        "#": {
+            "item": "crimsonjunkbags:junk_bag_common"
+        }
+    },
+    "result": {
+        "item": "crimsonjunkbags:junk_bag_uncommon",
+        "count": 1
+    }
+}

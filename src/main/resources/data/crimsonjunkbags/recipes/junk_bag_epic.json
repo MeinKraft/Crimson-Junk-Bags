@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "##",
+        "##"
+    ],
+    "key": {
+        "#": {
+            "item": "crimsonjunkbags:junk_bag_rare"
+        }
+    },
+    "result": {
+        "item": "crimsonjunkbags:junk_bag_epic",
+        "count": 1
+    }
+}

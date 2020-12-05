@@ -7,7 +7,6 @@ import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -21,6 +20,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +40,8 @@ public class CrimsonJunkBags {
     public static ArrayList<Item> LootBagRareItemLoot = new ArrayList<Item>();
     public static ArrayList<Item> LootBagEpicItemLoot = new ArrayList<Item>();
     public static ArrayList<Item> LootBagLegendaryItemLoot = new ArrayList<Item>();
+// Unknown
+    public static ArrayList<String> UnknownItemLoot = new ArrayList<String>();
 
 
     public CrimsonJunkBags() {
@@ -84,7 +86,6 @@ public class CrimsonJunkBags {
         else {
             LootLoader(FoodBagItemLoot, "food_loot.txt");
             LootLoader(FoodBagSuperItemLoot, "food_super_loot.txt");
-
         }
 
         LootLoader(LootBagCommonItemLoot, "common_loot.txt");
@@ -92,6 +93,8 @@ public class CrimsonJunkBags {
         LootLoader(LootBagRareItemLoot, "rare_loot.txt");
         LootLoader(LootBagEpicItemLoot, "epic_loot.txt");
         LootLoader(LootBagLegendaryItemLoot, "legendary_loot.txt");
+
+        SaveUnknownItems();
     }
 
     private void LootLoader(List list, String path) {
@@ -101,19 +104,45 @@ public class CrimsonJunkBags {
         try {
             Loot = Files.readAllLines(FMLPaths.CONFIGDIR.get().resolve("junk_bags/" + path), StandardCharsets.UTF_8);
 
+/*             TODO: [x] Check against empty lines
+                     [x] Trim$() spaces from both ends of string
+                     [ ] NBT Support
+*/
+            UnknownItemLoot.add("[" + path + "]");
+
             for (String itemString : Loot) {
-                item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemString));
+                itemString = itemString.trim();
 
-                // if AIR then item not found
-                if (item == Items.AIR) {
-                    LOGGER.info("Item404: " + itemString + " @ " + path);
+                if (! itemString.equals("")) {
+                    item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemString));
 
-                } else {
-                    list.add(item);
+                    // if AIR then item not found
+                    if (item == Items.AIR) {
+                        LOGGER.info("Item404: " + itemString + " @ " + path);
+                        UnknownItemLoot.add(itemString);
+
+                    } else {
+                        list.add(item);
+                    }
                 }
             }
+
+            UnknownItemLoot.add("");
+
         }
         catch (IOException e) {
+            //e.printStackTrace();
+        }
+    }
+
+    private void SaveUnknownItems() {
+        Path path = FMLPaths.CONFIGDIR.get().resolve("junk_bags/unknown.txt");
+
+        try {
+            Files.deleteIfExists(path);
+            Files.write(path, UnknownItemLoot, StandardCharsets.UTF_8);
+
+        } catch (IOException e) {
             //e.printStackTrace();
         }
     }

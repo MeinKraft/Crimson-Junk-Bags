@@ -10,8 +10,8 @@ displayName="CrimsonJunkBags"
 displayURL="http://crimsonfluff.com/"
 authors="§4Crimson_Fluff"
 logoFile="logo.png" #optional
-credits="\n§bRaziel23x§r for casually giving me the push I needed !\n§bTechnovision§r for his awesome modding YouTube series\n§bTurtyWurty§r for his awesome modding YouTube series" #optional
-description=''' This is my first attempt at basic Minecraft 1.16.4 modding  '''
+credits="\n§bTechnovision§r for his awesome modding YouTube series\n§bTurtyWurty§r for his awesome modding YouTube series" #optional
+description=''' A basic Loot Bag style mod for 1.16.3+ '''
 
 [[dependencies.crimsonjunkbags]]
     modId="minecraft"
