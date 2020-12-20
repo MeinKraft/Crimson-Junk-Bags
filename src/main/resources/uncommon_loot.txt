@@ -1,5 +1,0 @@
-minecraft:stone_sword
-minecraft:stone_pick
-minecraft:iron_ingot
-minecraft:stone
-minecraft:diorite

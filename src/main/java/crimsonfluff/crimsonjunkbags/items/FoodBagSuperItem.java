@@ -55,8 +55,8 @@ public class FoodBagSuperItem extends Item {
 
         Random rand = new Random();
         for (int a = 0; a<stackCount; a++) {
-            Item item = CrimsonJunkBags.FoodBagSuperItemLoot.get(rand.nextInt(CrimsonJunkBags.FoodBagSuperItemLoot.size()));
-            playerIn.dropItem(new ItemStack(item), true);
+            ItemStack item = CrimsonJunkBags.FoodBagSuperItemLoot.get(rand.nextInt(CrimsonJunkBags.FoodBagSuperItemLoot.size()));
+            playerIn.dropItem(item.copy(), true);
         }
 
         return new ActionResult<>(ActionResultType.SUCCESS, stack);

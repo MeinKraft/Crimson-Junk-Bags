@@ -126,11 +126,11 @@ jar {
     manifest {
         attributes([
             "Specification-Title": "crimsonjunkbags",
-            "Specification-Vendor": "crimsonjunkbags",
+            "Specification-Vendor": "CrimsonFluff",
             "Specification-Version": "${project.crimsonjunkbags_version}", // We are version 1 of ourselves
             "Implementation-Title": "crimsonjunkbags",
             "Implementation-Version": "${project.crimsonjunkbags_version}",
-            "Implementation-Vendor" :"crimsonjunkbags",
+            "Implementation-Vendor" :"CrimsonFluff",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }

@@ -6,7 +6,7 @@ issueTrackerURL="http://my.issue.tracker/" #optional
 [[mods]]
 modId="crimsonjunkbags"
 version="${version}"
-displayName="CrimsonJunkBags"
+displayName="Crimson Junk Bags"
 displayURL="http://crimsonfluff.com/"
 authors="§4Crimson_Fluff"
 logoFile="logo.png" #optional

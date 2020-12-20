@@ -41,3 +41,4 @@ $RECYCLE.BIN/
 
 # Data gen cache
 /src/datagen/generated/.cache
+*.rar

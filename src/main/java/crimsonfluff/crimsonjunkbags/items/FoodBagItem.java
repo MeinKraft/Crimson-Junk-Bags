@@ -28,9 +28,9 @@ public class FoodBagItem extends Item {
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (CrimsonJunkBags.FoodBagItemLoot == null)
-            tooltip.add((new TranslationTextComponent("tip." + CrimsonJunkBags.MOD_ID + ".no_loot").mergeStyle(TextFormatting.RED)));
+            tooltip.add(new TranslationTextComponent("tip." + CrimsonJunkBags.MOD_ID + ".no_loot").mergeStyle(TextFormatting.RED));
         else
-            tooltip.add((new TranslationTextComponent("tip." + CrimsonJunkBags.MOD_ID + ".food_bag").mergeStyle(TextFormatting.GREEN)));
+            tooltip.add(new TranslationTextComponent("tip." + CrimsonJunkBags.MOD_ID + ".food_bag").mergeStyle(TextFormatting.GREEN));
 
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }
@@ -53,8 +53,8 @@ public class FoodBagItem extends Item {
 
         Random rand = new Random();
         for (int a = 0; a<stackCount; a++) {
-            Item item = CrimsonJunkBags.FoodBagItemLoot.get(rand.nextInt(CrimsonJunkBags.FoodBagItemLoot.size()));
-            playerIn.dropItem(new ItemStack(item), true);
+            ItemStack item = CrimsonJunkBags.FoodBagItemLoot.get(rand.nextInt(CrimsonJunkBags.FoodBagItemLoot.size()));
+            playerIn.dropItem(item.copy(), true);
         }
 
         return new ActionResult<>(ActionResultType.SUCCESS, stack);

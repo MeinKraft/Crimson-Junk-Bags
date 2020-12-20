@@ -52,8 +52,8 @@ public class LootBagLegendaryItem extends Item {
 
         Random rand = new Random();
         for (int a = 0; a < stackCount; a++) {
-            Item item = CrimsonJunkBags.LootBagLegendaryItemLoot.get(rand.nextInt(CrimsonJunkBags.LootBagLegendaryItemLoot.size()));
-            playerIn.dropItem(new ItemStack(item), true);
+            ItemStack item = CrimsonJunkBags.LootBagLegendaryItemLoot.get(rand.nextInt(CrimsonJunkBags.LootBagLegendaryItemLoot.size()));
+            playerIn.dropItem(item.copy(), true);
         }
 
         return new ActionResult<>(ActionResultType.SUCCESS, stack);

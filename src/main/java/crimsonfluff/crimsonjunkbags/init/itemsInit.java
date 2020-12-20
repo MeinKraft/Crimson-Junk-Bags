@@ -19,5 +19,7 @@ public class itemsInit {
     public static final RegistryObject<Item> JUNK_BAG_EPIC = ITEMS.register("junk_bag_epic", LootBagEpicItem::new);
     public static final RegistryObject<Item> JUNK_BAG_LEGENDARY = ITEMS.register("junk_bag_legendary", LootBagLegendaryItem::new);
 
+// Custom
     public static final RegistryObject<Item> JUNK_BAG_STOMP = ITEMS.register("junk_bag_stomp", LootBagStompItem::new);
+    public static final RegistryObject<Item> JUNK_BAG_BATS = ITEMS.register("bats_bag", LootBagBatsItem::new);
 }
