@@ -1,7 +1,6 @@
 package crimsonfluff.crimsonjunkbags.items;
 
 import crimsonfluff.crimsonjunkbags.CrimsonJunkBags;
-import crimsonfluff.crimsonjunkbags.util.KeyboardHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -16,7 +15,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.List;
-import java.util.Random;
 
 public class LootBagStompItem extends Item {
     public LootBagStompItem() {

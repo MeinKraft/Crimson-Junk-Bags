@@ -7,9 +7,7 @@ import crimsonfluff.crimsonjunkbags.util.JunkBagsCommands;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.JsonToNBT;
-import net.minecraft.nbt.StringNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -29,12 +27,10 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.nio.charset.CharsetEncoder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.nio.file.attribute.FileAttribute;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,15 +71,12 @@ public class CrimsonJunkBags {
     // This Event is fired after all mods have loaded/done their init stages
     // we need this so we can pull Items from other Mods in ForgeRegistries.ITEMS
     private void setup(final FMLCommonSetupEvent event) {
+        initLootConfigs();
         initLootBagItems();
     }
 
 
     private void initLootBagItems() {
-        // TODO: If folder 'config/junkbags' not found then create example configs
-
-        initLootConfigs();
-
         if (CONFIGURATION.Food_Auto.get()) {
             boolean isSuper = false;
 
@@ -136,7 +129,7 @@ public class CrimsonJunkBags {
                 itemString = itemString.trim();
 
                 if (!itemString.equals("")) {
-                    find = itemString.indexOf("{", 0);
+                    find = itemString.indexOf("{");
 
                     if (find == -1)
                         itemName = itemString;      // '{' not found
