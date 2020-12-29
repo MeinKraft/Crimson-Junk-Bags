@@ -23,13 +23,13 @@ import java.util.List;
 
 public class LootBagBatsItem extends Item {
     public LootBagBatsItem() {
-        super(new Properties().group(ItemGroup.MISC));
+        super(new Properties().group(ItemGroup.MISC).maxStackSize(1));
     }
 
     @OnlyIn(Dist.CLIENT)
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add((new TranslationTextComponent("tip." + CrimsonJunkBags.MOD_ID + ".bats_bag.item").mergeStyle(TextFormatting.GREEN)));
+        tooltip.add(new TranslationTextComponent("tip." + CrimsonJunkBags.MOD_ID + ".bats_bag.item").mergeStyle(TextFormatting.GREEN));
 
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }

@@ -1,7 +1,6 @@
 package crimsonfluff.crimsonjunkbags.items;
 
 import crimsonfluff.crimsonjunkbags.CrimsonJunkBags;
-import crimsonfluff.crimsonjunkbags.util.KeyboardHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -47,7 +46,7 @@ public class FoodBagItem extends Item {
         if (CrimsonJunkBags.CONFIGURATION.Loot_Playsound.get())
             playerIn.world.playSound(null, playerIn.getPosition(), SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.PLAYERS, 1f, 1f);
 
-        int stackCount = (KeyboardHelper.isHoldingShift()) ? stack.getCount() : 1;
+        int stackCount = (playerIn.isCrouching()) ? stack.getCount() : 1;
         if (!playerIn.isCreative()) stack.shrink(stackCount);
 
         Random rand = new Random();
