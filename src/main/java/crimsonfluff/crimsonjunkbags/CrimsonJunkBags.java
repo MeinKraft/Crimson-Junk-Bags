@@ -2,6 +2,7 @@ package crimsonfluff.crimsonjunkbags;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import crimsonfluff.crimsonjunkbags.init.itemsInit;
+import crimsonfluff.crimsonjunkbags.util.CommonCode;
 import crimsonfluff.crimsonjunkbags.util.ConfigBuilder;
 import crimsonfluff.crimsonjunkbags.util.JunkBagsCommands;
 import net.minecraft.item.Item;
@@ -34,22 +35,24 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
-@Mod("crimsonjunkbags")
+@Mod(CrimsonJunkBags.MOD_ID)
 public class CrimsonJunkBags {
     public static final String MOD_ID = "crimsonjunkbags";
     public static final Logger LOGGER = LogManager.getLogger("CrimsonJunkBags");
     final IEventBus MOD_EVENTBUS = FMLJavaModLoadingContext.get().getModEventBus();
+
     public static final ConfigBuilder CONFIGURATION = new ConfigBuilder();
+    public static final CommonCode COMMON = new CommonCode();
 
 // Food
     public static ArrayList<ItemStack> FoodBagItemLoot = new ArrayList<>();
     public static ArrayList<ItemStack> FoodBagSuperItemLoot = new ArrayList<>();
 // Loot
-    public static ArrayList<ItemStack> LootBagCommonItemLoot = new ArrayList<>();
-    public static ArrayList<ItemStack> LootBagUnCommonItemLoot = new ArrayList<>();
-    public static ArrayList<ItemStack> LootBagRareItemLoot = new ArrayList<>();
-    public static ArrayList<ItemStack> LootBagEpicItemLoot = new ArrayList<>();
-    public static ArrayList<ItemStack> LootBagLegendaryItemLoot = new ArrayList<>();
+    public static ArrayList<ItemStack> JunkBagCommonItemLoot = new ArrayList<>();
+    public static ArrayList<ItemStack> JunkBagUnCommonItemLoot = new ArrayList<>();
+    public static ArrayList<ItemStack> JunkBagRareItemLoot = new ArrayList<>();
+    public static ArrayList<ItemStack> JunkBagEpicItemLoot = new ArrayList<>();
+    public static ArrayList<ItemStack> JunkBagLegendaryItemLoot = new ArrayList<>();
 // Unknown
     public static ArrayList<String> UnknownItemLoot = new ArrayList<>();
 
@@ -103,11 +106,11 @@ public class CrimsonJunkBags {
             LootLoader(FoodBagSuperItemLoot, "food_super_loot.txt");
         }
 
-        LootLoader(LootBagCommonItemLoot, "common_loot.txt");
-        LootLoader(LootBagUnCommonItemLoot, "uncommon_loot.txt");
-        LootLoader(LootBagRareItemLoot, "rare_loot.txt");
-        LootLoader(LootBagEpicItemLoot, "epic_loot.txt");
-        LootLoader(LootBagLegendaryItemLoot, "legendary_loot.txt");
+        LootLoader(JunkBagCommonItemLoot, "common_loot.txt");
+        LootLoader(JunkBagUnCommonItemLoot, "uncommon_loot.txt");
+        LootLoader(JunkBagRareItemLoot, "rare_loot.txt");
+        LootLoader(JunkBagEpicItemLoot, "epic_loot.txt");
+        LootLoader(JunkBagLegendaryItemLoot, "legendary_loot.txt");
 
         SaveUnknownItems();
     }

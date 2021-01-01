@@ -6,6 +6,7 @@ public class ConfigBuilder {
 
     public ForgeConfigSpec.BooleanValue Loot_Playsound;
     public ForgeConfigSpec.BooleanValue Food_Auto;
+    public ForgeConfigSpec.BooleanValue Loot_Particles;
     public ForgeConfigSpec.IntValue Food_Hunger;
     public ForgeConfigSpec.IntValue Food_Saturation;
 
@@ -19,7 +20,11 @@ public class ConfigBuilder {
 
         Loot_Playsound = builder
             .comment("Play a sound when opened ?")
-            .define("JunkBag_Playsound", true);
+            .define("Playsound", true);
+
+        Loot_Particles = builder
+                .comment("Make particles when Junk Bag is opened ?")
+                .define("Particles", true);
 
         builder.pop();
 

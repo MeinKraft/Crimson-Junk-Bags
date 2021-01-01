@@ -45,11 +45,11 @@ public class JunkBagsCommands {
         player.sendStatusMessage(new StringTextComponent("\n"), false);
         player.sendStatusMessage(new StringTextComponent("FoodBag - " + CrimsonJunkBags.FoodBagItemLoot.size()), false);
         player.sendStatusMessage(new StringTextComponent("SuperFoodBag - " + CrimsonJunkBags.FoodBagSuperItemLoot.size()), false);
-        player.sendStatusMessage(new StringTextComponent("Common - " + CrimsonJunkBags.LootBagCommonItemLoot.size()), false);
-        player.sendStatusMessage(new StringTextComponent("UnCommon - " + CrimsonJunkBags.LootBagUnCommonItemLoot.size()), false);
-        player.sendStatusMessage(new StringTextComponent("Rare - " + CrimsonJunkBags.LootBagRareItemLoot.size()), false);
-        player.sendStatusMessage(new StringTextComponent("Epic - " + CrimsonJunkBags.LootBagEpicItemLoot.size()), false);
-        player.sendStatusMessage(new StringTextComponent("Legendary - " + CrimsonJunkBags.LootBagLegendaryItemLoot.size()), false);
+        player.sendStatusMessage(new StringTextComponent("Common - " + CrimsonJunkBags.JunkBagCommonItemLoot.size()), false);
+        player.sendStatusMessage(new StringTextComponent("UnCommon - " + CrimsonJunkBags.JunkBagUnCommonItemLoot.size()), false);
+        player.sendStatusMessage(new StringTextComponent("Rare - " + CrimsonJunkBags.JunkBagRareItemLoot.size()), false);
+        player.sendStatusMessage(new StringTextComponent("Epic - " + CrimsonJunkBags.JunkBagEpicItemLoot.size()), false);
+        player.sendStatusMessage(new StringTextComponent("Legendary - " + CrimsonJunkBags.JunkBagLegendaryItemLoot.size()), false);
         player.sendStatusMessage(new StringTextComponent("Unknown - " + CrimsonJunkBags.UnknownItemLoot.size()), false);
         player.sendStatusMessage(new StringTextComponent("\n"), false);
 
@@ -57,31 +57,31 @@ public class JunkBagsCommands {
     }
 
     private int addToCommon(CommandContext<CommandSource> cscc) throws CommandSyntaxException {
-        addToBag(CrimsonJunkBags.LootBagCommonItemLoot, cscc.getSource().asPlayer(), FMLPaths.CONFIGDIR.get().resolve("junk_bags/common_loot.txt"));
+        addToBag(CrimsonJunkBags.JunkBagCommonItemLoot, cscc.getSource().asPlayer(), FMLPaths.CONFIGDIR.get().resolve("junk_bags/common_loot.txt"));
 
         return 0;
     }
 
     private int addToUnCommon(CommandContext<CommandSource> cscc) throws CommandSyntaxException {
-        addToBag(CrimsonJunkBags.LootBagUnCommonItemLoot, cscc.getSource().asPlayer(), FMLPaths.CONFIGDIR.get().resolve("junk_bags/uncommon_loot.txt"));
+        addToBag(CrimsonJunkBags.JunkBagUnCommonItemLoot, cscc.getSource().asPlayer(), FMLPaths.CONFIGDIR.get().resolve("junk_bags/uncommon_loot.txt"));
 
         return 0;
     }
 
     private int addToRare(CommandContext<CommandSource> cscc) throws CommandSyntaxException {
-        addToBag(CrimsonJunkBags.LootBagRareItemLoot, cscc.getSource().asPlayer(), FMLPaths.CONFIGDIR.get().resolve("junk_bags/rare_loot.txt"));
+        addToBag(CrimsonJunkBags.JunkBagRareItemLoot, cscc.getSource().asPlayer(), FMLPaths.CONFIGDIR.get().resolve("junk_bags/rare_loot.txt"));
 
         return 0;
     }
 
     private int addToEpic(CommandContext<CommandSource> cscc) throws CommandSyntaxException {
-        addToBag(CrimsonJunkBags.LootBagEpicItemLoot, cscc.getSource().asPlayer(),FMLPaths.CONFIGDIR.get().resolve("junk_bags/epic_loot.txt"));
+        addToBag(CrimsonJunkBags.JunkBagEpicItemLoot, cscc.getSource().asPlayer(),FMLPaths.CONFIGDIR.get().resolve("junk_bags/epic_loot.txt"));
 
         return 0;
     }
 
     private int addToLegendary(CommandContext<CommandSource> cscc) throws CommandSyntaxException {
-        addToBag(CrimsonJunkBags.LootBagLegendaryItemLoot, cscc.getSource().asPlayer(), FMLPaths.CONFIGDIR.get().resolve("junk_bags/legendary_loot.txt"));
+        addToBag(CrimsonJunkBags.JunkBagLegendaryItemLoot, cscc.getSource().asPlayer(), FMLPaths.CONFIGDIR.get().resolve("junk_bags/legendary_loot.txt"));
 
         return 0;
     }

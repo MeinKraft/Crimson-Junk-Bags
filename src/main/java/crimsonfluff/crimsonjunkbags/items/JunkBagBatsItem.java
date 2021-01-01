@@ -21,8 +21,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.List;
 
-public class LootBagBatsItem extends Item {
-    public LootBagBatsItem() {
+public class JunkBagBatsItem extends Item {
+    public JunkBagBatsItem() {
         super(new Properties().group(ItemGroup.MISC).maxStackSize(1));
     }
 

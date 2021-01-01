@@ -1,6 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "crimsonjunkbags:item/junk_bag_rare"
+        "layer0": "crimsonjunkbags:item/junk_bag_rare",
+		"particle": "crimsonjunkbags:item/junk_bag_rare"
     }
 }

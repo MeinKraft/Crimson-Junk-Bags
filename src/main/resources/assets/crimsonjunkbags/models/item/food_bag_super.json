@@ -1,6 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "crimsonjunkbags:item/food_bag_super"
+        "layer0": "crimsonjunkbags:item/food_bag_super",
+		"particle": "crimsonjunkbags:item/food_bag_super"
     }
 }
