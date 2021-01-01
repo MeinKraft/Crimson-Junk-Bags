@@ -9,7 +9,8 @@
   "item.crimsonjunkbags.junk_bag_epic": "Epic Junk Bag",
   "item.crimsonjunkbags.junk_bag_legendary": "Legendary Junk Bag",
   "item.crimsonjunkbags.junk_bag_stomp": "Stomp_The_Bean Junk Bag",
-  
+  "item.crimsonjunkbags.bats_bag": "Bats Bag",
+
   "tip.crimsonjunkbags.food_bag": "Common all-round goodness",
   "tip.crimsonjunkbags.food_bag_super": "Foods that restore more than 10 Hearts !",
 
@@ -20,6 +21,7 @@
   "tip.crimsonjunkbags.junk_bag_epic.item": "What treasures await? Probably not so-rare rubbish",
   "tip.crimsonjunkbags.junk_bag_legendary.item": "What treasures await? Probably involves legs and ends ary",
   "tip.crimsonjunkbags.junk_bag_stomp.item": "Surprised? You might be!",
+  "tip.crimsonjunkbags.bats_bag.item": "One too many and you might turn Batty !",
 
   "death.attack.boom": "Exploding Junk Bags - Yep, Its a thing !"
 }

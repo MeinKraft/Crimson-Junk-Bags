@@ -1,7 +1,6 @@
 package crimsonfluff.crimsonjunkbags.items;
 
 import crimsonfluff.crimsonjunkbags.CrimsonJunkBags;
-import crimsonfluff.crimsonjunkbags.util.KeyboardHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -27,9 +26,9 @@ public class LootBagEpicItem extends Item {
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (CrimsonJunkBags.LootBagEpicItemLoot.size() == 0)
-            tooltip.add((new TranslationTextComponent("tip." + CrimsonJunkBags.MOD_ID + ".no_loot").mergeStyle(TextFormatting.RED)));
+            tooltip.add(new TranslationTextComponent("tip." + CrimsonJunkBags.MOD_ID + ".no_loot").mergeStyle(TextFormatting.RED));
         else
-            tooltip.add((new TranslationTextComponent("tip." + CrimsonJunkBags.MOD_ID + ".junk_bag_epic.item").mergeStyle(TextFormatting.GREEN)));
+            tooltip.add(new TranslationTextComponent("tip." + CrimsonJunkBags.MOD_ID + ".junk_bag_epic.item").mergeStyle(TextFormatting.GREEN));
 
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }
@@ -47,13 +46,13 @@ public class LootBagEpicItem extends Item {
         if (CrimsonJunkBags.CONFIGURATION.Loot_Playsound.get())
             playerIn.world.playSound(null, playerIn.getPosition(), SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.PLAYERS, 1f, 1f);
 
-        int stackCount = (KeyboardHelper.isHoldingShift()) ? stack.getCount() : 1;
+        int stackCount = (playerIn.isCrouching()) ? stack.getCount() : 1;
         if (!playerIn.isCreative()) stack.shrink(stackCount);
 
         Random rand = new Random();
         for (int a = 0; a < stackCount; a++) {
-            Item item = CrimsonJunkBags.LootBagEpicItemLoot.get(rand.nextInt(CrimsonJunkBags.LootBagEpicItemLoot.size()));
-            playerIn.dropItem(new ItemStack(item), true);
+            ItemStack item = CrimsonJunkBags.LootBagEpicItemLoot.get(rand.nextInt(CrimsonJunkBags.LootBagEpicItemLoot.size()));
+            playerIn.dropItem(item.copy(), true);
         }
 
         return new ActionResult<>(ActionResultType.SUCCESS, stack);

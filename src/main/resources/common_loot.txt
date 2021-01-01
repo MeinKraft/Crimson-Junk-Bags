@@ -1,3 +1,0 @@
-minecraft:wooden_sword
-minecraft:stick
-minecraft:bowl

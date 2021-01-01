@@ -14,7 +14,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = "${crimsonjunkbags_version}"
-group = 'CrimsonFluff.crimsonjunkbags' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = 'crimsonfluff.crimsonjunkbags' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'crimsonjunkbags'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
@@ -125,12 +125,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "crimsonjunkbags",
-            "Specification-Vendor": "crimsonjunkbags",
+            "Specification-Title": "CrimsonJunkBags",
+            "Specification-Vendor": "CrimsonFluff",
             "Specification-Version": "${project.crimsonjunkbags_version}", // We are version 1 of ourselves
-            "Implementation-Title": "crimsonjunkbags",
+            "Implementation-Title": "CrimsonJunkBags",
             "Implementation-Version": "${project.crimsonjunkbags_version}",
-            "Implementation-Vendor" :"crimsonjunkbags",
+            "Implementation-Vendor" :"CrimsonFluff",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }

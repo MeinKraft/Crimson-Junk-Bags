@@ -1,3 +1,0 @@
-minecraft:nether_star
-minecraft:diamond_block
-minecraft:emerald_block

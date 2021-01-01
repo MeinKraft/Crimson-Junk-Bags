@@ -1,5 +1,0 @@
-minecraft:diamond_sword
-minecraft:diamond_pickaxe
-minecraft:iron_ingot
-minecraft:diamond
-minecraft:emerald
